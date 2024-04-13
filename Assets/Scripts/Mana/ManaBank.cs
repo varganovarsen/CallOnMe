@@ -28,7 +28,7 @@ public class ManaBank : MonoBehaviour
     static public void AddMana(int amount)
     {
             manaCount += amount;
-            instance.OnManaChanged.Invoke(amount);
+            instance.OnManaChanged?.Invoke(amount);
         
 
     }
@@ -37,7 +37,7 @@ public class ManaBank : MonoBehaviour
     {
 
             manaCount -= amount;
-            instance.OnManaChanged.Invoke(amount);
+            instance.OnManaChanged?.Invoke(amount);
         
     }
 }

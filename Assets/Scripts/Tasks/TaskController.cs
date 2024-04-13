@@ -10,6 +10,8 @@ namespace Assets.Scripts.Tasks
 
         [SerializeField]
         GameObject taskPointPrefab;
+        [SerializeField]
+        GameObject attackPointPrefab;
 
         TaskPointFactory taskPointFactory;
         TaskPoint currentPoint;
@@ -33,7 +35,7 @@ namespace Assets.Scripts.Tasks
         public void StartTask(Task taskToStart)
         {
             currentTask = taskToStart;
-            taskPointFactory = new TaskPointFactory(currentTask, taskPointPrefab);
+            taskPointFactory = new TaskPointFactory(currentTask, DealController.IsOnDeal ? attackPointPrefab : taskPointPrefab);
             currentPoint = taskPointFactory.SpawnTaskPoint();
             currentPoint.OnDestroyed += OnTaskPointDesroyed;
 

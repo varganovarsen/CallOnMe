@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class TaskPoint : MonoBehaviour
 {
-    public event Action OnDestroyed;
+    public virtual event Action OnDestroyed;
     [SerializeField]
     int manaCost;
 
@@ -27,7 +27,7 @@ public class TaskPoint : MonoBehaviour
     }
 
 
-    private void OnMouseDown()
+    public virtual void OnMouseDown()
     {
         if (ManaBank.ManaCount > 0)
             OnClick();
@@ -71,7 +71,7 @@ public class TaskPoint : MonoBehaviour
         _holding = false;
     }
 
-    void OnClick()
+    public virtual void OnClick()
     {
 
         ManaBank.RemoveMana(manaCost);
