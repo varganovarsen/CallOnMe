@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Tasks
 {
-    public class TaskPointFactory : MonoBehaviour
+    public class TaskPointFactory
     {
         Task task;
 

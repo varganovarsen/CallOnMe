@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 namespace Assets.Scripts.Tasks
@@ -13,6 +14,8 @@ namespace Assets.Scripts.Tasks
         TaskPointFactory taskPointFactory;
         TaskPoint currentPoint;
         Task currentTask;
+
+        public event Action<Task> OnTaskEnded;
 
         private void Awake()
         {
@@ -43,7 +46,18 @@ namespace Assets.Scripts.Tasks
             {
                 currentPoint = taskPointFactory.SpawnTaskPoint();
                 currentPoint.OnDestroyed += OnTaskPointDesroyed;
+            } else
+            {
+                EndTask();
             }
+        }
+
+        public void EndTask()
+        {
+            OnTaskEnded.Invoke(currentTask);
+            currentTask = null;
+            currentPoint = null;
+
         }
     }
 }

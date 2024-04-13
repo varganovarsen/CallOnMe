@@ -22,5 +22,15 @@ public class TaskGiver : MonoBehaviour
     void OnClick()
     {
         TaskController.instance.StartTask(task);
+        TaskController.instance.OnTaskEnded += DisableTaskGiver;
+    }
+
+    void DisableTaskGiver(Task endedTask)
+    {
+        if(endedTask == task)
+        {
+            //TODO: implement animation
+            GetComponent<SpriteRenderer>().enabled = false; 
+        }
     }
 }
