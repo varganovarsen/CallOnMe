@@ -25,7 +25,8 @@ public class DealController : MonoBehaviour
 
    public void AcceptDeal()
     {
-        LoadUpworldScene();
+        _isOnDeal = true;
+        LevelLoader.Instance.LoadUpworldScene();
     }
 
     private void Start()
@@ -35,17 +36,13 @@ public class DealController : MonoBehaviour
 
     // Debug!!!!
     [ContextMenu("Toggle deal state")]
-    void DEBUG_ChangeDealState()
+    public void DEBUG_ChangeDealState()
     {
         _isOnDeal = !_isOnDeal;
+        FindObjectOfType<CameraController>().ToggleCameras();
     }
 
     //Debug!!!
 
-    public void LoadUpworldScene()
-    {
-        _isOnDeal = true;
-        SceneManager.LoadScene(1, LoadSceneMode.Additive);
-        Camera.main.transform.Translate(0, 10, 0);
-    }
+    
 }

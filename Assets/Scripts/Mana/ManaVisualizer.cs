@@ -9,9 +9,15 @@ namespace Assets.Scripts.Mana
         [SerializeField]
         TMP_Text manaCounterText;
 
-        private void Start()
+
+        private void OnEnable()
         {
             ManaBank.instance.OnManaChanged += UpdateManaCounter;
+        }
+
+
+        private void Start()
+        {
             UpdateManaCounter(0);
         }
 
@@ -19,5 +25,11 @@ namespace Assets.Scripts.Mana
         {
             manaCounterText.text = ManaBank.ManaCount.ToString();
         }
+
+        private void OnDisable()
+        {
+            ManaBank.instance.OnManaChanged -= UpdateManaCounter;
+        }
+
     }
 }
