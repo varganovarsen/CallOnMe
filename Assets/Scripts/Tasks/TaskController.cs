@@ -16,6 +16,7 @@ namespace Assets.Scripts.Tasks
         Task currentTask;
 
         public event Action<Task> OnTaskEnded;
+        public event Action<Task> OnTaskStarted;
 
         private void Awake()
         {
@@ -36,6 +37,7 @@ namespace Assets.Scripts.Tasks
             currentPoint = taskPointFactory.SpawnTaskPoint();
             currentPoint.OnDestroyed += OnTaskPointDesroyed;
 
+            OnTaskStarted.Invoke(currentTask);
         }
 
         public void OnTaskPointDesroyed()
