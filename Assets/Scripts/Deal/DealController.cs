@@ -111,6 +111,8 @@ public class DealController : MonoBehaviour
        Deal _completedDeal =  _dealQueue?.Dequeue();
         OnCompleteDeal.Invoke();
 
+
+        ManaBank.AddMana(_completedDeal.manaCount);
         LevelLoader.Instance.UnloadUpworldScene(_completedDeal.sceneReference.SceneName);
 
     }
