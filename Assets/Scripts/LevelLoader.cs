@@ -58,6 +58,8 @@ public class LevelLoader : MonoBehaviour
             for (int i = 0; i < sceneCount; i++)
             {
                 _hasUnderworld = SceneManager.GetSceneAt(i).name.ToLower().Contains("underworld");
+                if (_hasUnderworld)
+                    return;
             }
 
             if (!_hasUnderworld)
