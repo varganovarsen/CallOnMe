@@ -76,7 +76,7 @@ public class TaskPoint : MonoBehaviour
 
         ManaBank.RemoveMana(manaCost);
         OnDestroyed.Invoke();
-        Destroy(gameObject);
+        Destroy(gameObject, 0.1f);
 
     }
 
@@ -95,6 +95,7 @@ public class TaskPoint : MonoBehaviour
             Destroy(gameObject );
         }
     }
+
 
     void UpdateSize()
     {

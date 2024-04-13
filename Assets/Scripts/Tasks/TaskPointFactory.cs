@@ -11,7 +11,7 @@ namespace Assets.Scripts.Tasks
 
         public TaskPoint SpawnTaskPoint()
         {
-            return GameObject.Instantiate(taskPointPrefab, task.TaskPointPositions.Dequeue(), Quaternion.identity).GetComponent<TaskPoint>();
+            return GameObject.Instantiate(taskPointPrefab, task.TaskPointPositions.Peek(), Quaternion.identity).GetComponent<TaskPoint>();
         }
 
         public TaskPointFactory(Task _task, GameObject _taskPointPrefab)

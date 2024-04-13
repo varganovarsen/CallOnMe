@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
-
+using Assets.Scripts.Deals;
 namespace Assets.Scripts.Tasks
 {
     public class TaskController : MonoBehaviour
@@ -31,6 +31,11 @@ namespace Assets.Scripts.Tasks
             }
         }
 
+        private void OnEnable()
+        {
+            DealController.instance.OnAcceptDeal += InterruptTask;
+        }
+
 
         public void StartTask(Task taskToStart)
         {
@@ -45,6 +50,7 @@ namespace Assets.Scripts.Tasks
         public void OnTaskPointDesroyed()
         {
             currentPoint.OnDestroyed -= OnTaskPointDesroyed;
+            currentTask.TaskPointPositions.Dequeue();
 
             if(currentTask.TaskPointPositions.Count > 0)
             {
@@ -54,6 +60,21 @@ namespace Assets.Scripts.Tasks
             {
                 EndTask();
             }
+        }
+
+        void InterruptTask(Deal _deal)
+        {
+            if (currentTask == null)
+                return;
+
+            currentTask = null;
+
+            if (currentPoint == null)
+                return;
+
+            currentPoint.OnDestroyed -= OnTaskPointDesroyed;
+            Destroy(currentPoint.gameObject);
+            currentPoint = null;
         }
 
         public void EndTask()

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using utils;
 
 public class LevelLoader : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class LevelLoader : MonoBehaviour
     GameObject CameraPrefab;
 
     public event Action OnUpworldLoaded;
+    public event Action OnUpwordUloaded;
 
 
     private void Awake()
@@ -24,10 +26,7 @@ public class LevelLoader : MonoBehaviour
 
     private void Start()
     {
-        if (!Camera.main)
-        {
-            Instantiate(CameraPrefab);
-        }
+        
 
         SceneManager.LoadScene("UI", LoadSceneMode.Additive);
     }
@@ -41,11 +40,22 @@ public class LevelLoader : MonoBehaviour
     {
         SceneManager.LoadScene(1, LoadSceneMode.Additive);
 
-
     }
+
+    public void UnloadUpworldScene(string sceneToUnload)
+    {
+        CustomInvoke.Invoke(this, () => SceneManager.UnloadSceneAsync(sceneToUnload), CameraController.BlendTime);
+        CustomInvoke.Invoke(this, () => OnUpwordUloaded.Invoke(), CameraController.BlendTime);
+    }
+
 
     private void OnLevelLoaded(Scene loadedScene, LoadSceneMode loadedSceneMode)
     {
+        if (!Camera.main)
+        {
+            Instantiate(CameraPrefab);
+        }
+
 
         if (loadedScene.name.ToLower().Contains("upworld"))
         {

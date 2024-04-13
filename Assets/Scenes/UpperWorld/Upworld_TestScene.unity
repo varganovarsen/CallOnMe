@@ -600,11 +600,40 @@ PrefabInstance:
       propertyPath: task.tasksPointsPositionsList.Array.data[3].y
       value: 9.46
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8849684649270153910, guid: 2f6ba87129032d24f97b39b27206542b, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3675692575517561544, guid: 2f6ba87129032d24f97b39b27206542b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 743640612}
   m_SourcePrefab: {fileID: 100100000, guid: 2f6ba87129032d24f97b39b27206542b, type: 3}
+--- !u!1 &743640611 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3675692575517561544, guid: 2f6ba87129032d24f97b39b27206542b,
+    type: 3}
+  m_PrefabInstance: {fileID: 743640610}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &743640612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 743640611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c2fc83615e7994e9a0c19eaea1f55b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  task:
+    tasksPointsPositionsList:
+    - {x: -2.89, y: 9.02, z: 0}
+    - {x: -0.23, y: 7.62, z: 0}
+    - {x: 0.76, y: 9.7, z: 0}
+    - {x: 5.89, y: 9.46, z: 0}
 --- !u!1 &896734040
 GameObject:
   m_ObjectHideFlags: 0
@@ -868,11 +897,40 @@ PrefabInstance:
       propertyPath: task.tasksPointsPositionsList.Array.data[3].y
       value: 12.27
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8849684649270153910, guid: 2f6ba87129032d24f97b39b27206542b, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3675692575517561544, guid: 2f6ba87129032d24f97b39b27206542b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1725519111}
   m_SourcePrefab: {fileID: 100100000, guid: 2f6ba87129032d24f97b39b27206542b, type: 3}
+--- !u!1 &1725519110 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3675692575517561544, guid: 2f6ba87129032d24f97b39b27206542b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1725519109}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1725519111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1725519110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c2fc83615e7994e9a0c19eaea1f55b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  task:
+    tasksPointsPositionsList:
+    - {x: -3.2, y: 8.64, z: 0}
+    - {x: -1.8, y: 11.57, z: 0}
+    - {x: 0.45, y: 10.31, z: 0}
+    - {x: 3.43, y: 12.27, z: 0}
 --- !u!1001 &1771568940
 PrefabInstance:
   m_ObjectHideFlags: 0

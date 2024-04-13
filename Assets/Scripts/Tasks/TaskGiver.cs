@@ -7,10 +7,10 @@ using UnityEngine;
 public class TaskGiver : MonoBehaviour 
 {
     [SerializeField]
-    Task task;
+    protected Task task;
 
     bool _interactable = true;
-    SpriteRenderer _gfx;
+    protected SpriteRenderer _gfx;
 
     private void Awake()
     {
@@ -20,8 +20,21 @@ public class TaskGiver : MonoBehaviour
 
     private void Start()
     {
+        
+    }
+
+    private void OnEnable()
+    {
         TaskController.instance.OnTaskStarted += ToggleInteractivity;
         TaskController.instance.OnTaskEnded += ToggleInteractivity;
+        LevelLoader.Instance.OnUpwordUloaded += SetInteractivity;
+    }
+
+    private void OnDisable()
+    {
+        TaskController.instance.OnTaskStarted -= ToggleInteractivity;
+        TaskController.instance.OnTaskEnded -= ToggleInteractivity;
+        LevelLoader.Instance.OnUpwordUloaded -= SetInteractivity;
     }
 
     private void OnMouseDown()
@@ -32,13 +45,13 @@ public class TaskGiver : MonoBehaviour
         }
     }
 
-    void OnClick()
+    public virtual void OnClick()
     {
         TaskController.instance.StartTask(task);
         TaskController.instance.OnTaskEnded += CompleteTaskGiver;
     }
 
-    void ToggleInteractivity(Task task)
+    protected virtual void ToggleInteractivity(Task task)
     {
 
         if (_interactable)
@@ -54,11 +67,19 @@ public class TaskGiver : MonoBehaviour
         }
 
         _interactable = !_interactable;
-        
 
     }
 
-    void CompleteTaskGiver(Task endedTask)
+    private void SetInteractivity()
+    {
+        _interactable = true;
+
+        Color newColor = _gfx.color;
+        newColor.a = 1f;
+        _gfx.color = newColor;
+    }
+
+    public virtual void CompleteTaskGiver(Task endedTask)
     {
         if(endedTask == task)
         {

@@ -10,9 +10,13 @@ public class CameraController : MonoBehaviour
     [SerializeField]
     CinemachineVirtualCamera _underworld;
 
+    public static float BlendTime;
     private void OnEnable()
     {
         LevelLoader.Instance.OnUpworldLoaded += ToggleCameras;
+        DealController.instance.OnCompleteDeal += ToggleCameras;
+
+        BlendTime = GetComponent<CinemachineBrain>().m_DefaultBlend.m_Time;
 
         int childCount = transform.childCount;
         for (int i = 0; i < childCount; i++)

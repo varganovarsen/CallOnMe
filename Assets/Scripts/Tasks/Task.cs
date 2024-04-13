@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Tasks
 {
-    [Serializable]
+    [Serializable, AllowsNull]
     public class Task
     {
         [SerializeField]
