@@ -11,7 +11,7 @@ using TMPro;
 public class TaskPoint : MonoBehaviour
 {
     public virtual event Action OnDestroyed;
- 
+
     bool _holding;
 
     [SerializeField]
@@ -23,7 +23,7 @@ public class TaskPoint : MonoBehaviour
 
 
     GameObject _gfx;
-    
+
 
     [SerializeField]
     ButtonToDestroy _buttonToDestroy;
@@ -63,12 +63,22 @@ public class TaskPoint : MonoBehaviour
 
     private void OnMouseOver()
     {
-        if (Input.GetMouseButton(((int)_buttonToDestroy)))
+        if(!Input.GetMouseButton((int)_buttonToDestroy)) return;
+
+        switch (_buttonToDestroy)
         {
-            _holding = true;
+            case ButtonToDestroy.Left:
+                if (Input.GetMouseButton((int)ButtonToDestroy.Right)) return;
+                break;
+            case ButtonToDestroy.Right:
+                if (Input.GetMouseButton((int)ButtonToDestroy.Left)) return;
+                break;
+        }
+
+        _holding = true;
             OnHold();
 
-        }
+
 
 
     }
@@ -102,7 +112,7 @@ public class TaskPoint : MonoBehaviour
             _holding = false;
             _currentHoldTime = 0;
             OnDestroyed.Invoke();
-            Destroy(gameObject );
+            Destroy(gameObject);
         }
     }
 
@@ -110,7 +120,7 @@ public class TaskPoint : MonoBehaviour
     void UpdateSize()
     {
         Vector2 newSize;
-        newSize.x = 1 -  _curve.Evaluate(_currentHoldTime / maxHoldTime);
+        newSize.x = 1 - _curve.Evaluate(_currentHoldTime / maxHoldTime);
         newSize.y = 1 - _curve.Evaluate(_currentHoldTime / maxHoldTime);
         _gfx.transform.localScale = newSize;
     }
