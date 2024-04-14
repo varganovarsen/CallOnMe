@@ -19,7 +19,7 @@ namespace Assets.Scripts.utils
         {
             if (!Application.isEditor)
             {
-                Destroy(this);
+                Destroy(gameObject);
             }
             SceneView.onSceneGUIDelegate += OnScene;
         }

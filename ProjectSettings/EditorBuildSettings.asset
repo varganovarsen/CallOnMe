@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/UI.unity
     guid: e10af7d659af09d4db7f1a3ed52f5afa
+  - enabled: 1
+    path: Assets/Scenes/UpperWorld/01_Upworld.unity
+    guid: edc87a516be7cd54799c31bbfd9143ff
   m_configObjects: {}

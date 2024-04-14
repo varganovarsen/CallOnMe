@@ -37,9 +37,9 @@ public class LevelLoader : MonoBehaviour
         SceneManager.sceneLoaded += OnLevelLoaded;
     }
 
-    public void LoadUpworldScene()
+    public void LoadUpworldScene(string _sceneToLoad)
     {
-        SceneManager.LoadScene(1, LoadSceneMode.Additive);
+        SceneManager.LoadScene(_sceneToLoad, LoadSceneMode.Additive);
 
     }
 

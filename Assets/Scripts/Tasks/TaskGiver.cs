@@ -224,6 +224,7 @@ public class TaskGiver : MonoBehaviour
         {
             foreach (var taskPointPosition in task.TasksPointsPositionsList)
             {
+                Gizmos.color = Color.red;
                 Gizmos.DrawWireSphere(taskPointPosition, 0.2f);
             }
         }

@@ -93,7 +93,7 @@ public class DealController : MonoBehaviour
     {
         _isOnDeal = true;
         OnAcceptDeal?.Invoke(_currentDeal);
-        LevelLoader.Instance.LoadUpworldScene();
+        LevelLoader.Instance.LoadUpworldScene(_currentDeal.sceneReference.SceneName);
     }
 
     void PrepareDealGoal()
