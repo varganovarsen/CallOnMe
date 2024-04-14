@@ -91,7 +91,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1832143430100054010, guid: 1ca950c5fb415934ea8746be1aa467d8,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7497869014604578929}
+      addedObject: {fileID: 8796053668671232392}
   m_SourcePrefab: {fileID: 100100000, guid: 1ca950c5fb415934ea8746be1aa467d8, type: 3}
 --- !u!1 &3101250235805312595 stripped
 GameObject:
@@ -99,7 +99,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3631253795874818473}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7497869014604578929
+--- !u!114 &8796053668671232392
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -111,5 +111,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3386be652ace284a842e548e8f66dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manaCost: 0
-  maxHoldTime: 0
+  maxHoldTime: 0.5
+  _curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: -2.5561893
+      outSlope: -2.5561893
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.19058155
+    - serializedVersion: 3
+      time: 0.50228226
+      value: -0.70084375
+      inSlope: 0.11812774
+      outSlope: 0.11812774
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.31335267
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: -0.18155941
+      outSlope: -0.18155941
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 1
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _buttonToDestroy: 0

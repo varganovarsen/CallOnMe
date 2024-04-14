@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 912252380558211015}
   - component: {fileID: 2044339275421508491}
   - component: {fileID: 2641105431891816453}
+  - component: {fileID: 1166033101865619240}
   m_Layer: 0
   m_Name: TaskPoint
   m_TagString: Untagged
@@ -229,6 +230,25 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.6105183
+--- !u!114 &1166033101865619240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1832143430100054010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3513bb1634dee3c4d8a5ab4cfd73d019, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpeed: 0.002
+  maxForce: 0
+  wanderPower: 0.13
+  wanderDistance: 4.59
+  wanderWeight: 0.145
+  seekPower: 0.04
+  seekWeight: 0.263
 --- !u!1 &2913674536817960992
 GameObject:
   m_ObjectHideFlags: 0

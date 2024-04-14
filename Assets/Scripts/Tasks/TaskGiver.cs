@@ -85,7 +85,7 @@ public class TaskGiver : MonoBehaviour
         }
     }
 
-    private void OnMouseOver()
+    protected virtual void OnMouseOver()
     {
         if (_interactable)
         {

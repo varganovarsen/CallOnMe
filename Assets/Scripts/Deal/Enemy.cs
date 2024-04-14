@@ -24,6 +24,10 @@ namespace Assets.Scripts.Deals
         //    base.ToggleInteractivity(task);
         //}
 
+        protected override void OnMouseOver()
+        {
+            
+        }
     }
 
 

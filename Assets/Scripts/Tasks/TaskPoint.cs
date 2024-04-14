@@ -93,12 +93,12 @@ public class TaskPoint : MonoBehaviour
         _holding = false;
     }
 
-    public virtual void OnClick()
-    {
-        OnDestroyed.Invoke();
-        Destroy(gameObject, 0.1f);
+    //public virtual void OnClick()
+    //{
+    //    OnDestroyed.Invoke();
+    //    Destroy(gameObject, 0.1f);
 
-    }
+    //}
 
     void OnHold()
     {
