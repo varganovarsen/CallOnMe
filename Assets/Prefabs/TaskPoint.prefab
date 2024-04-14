@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20c9e0193a1ab3a4f827a0a3aa26e319, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHoldTime: 0.7
+  maxHoldTime: 0.5
   _curve:
     serializedVersion: 2
     m_Curve:

@@ -24,6 +24,8 @@ public class TaskPoint : MonoBehaviour
 
     GameObject _gfx;
 
+    public event Action OnWrongTaskPointClick;
+
 
     [SerializeField]
     ButtonToDestroy _buttonToDestroy;
@@ -61,25 +63,28 @@ public class TaskPoint : MonoBehaviour
         }
     }
 
-    private void OnMouseOver()
+    protected virtual void OnMouseOver()
     {
-        if(!Input.GetMouseButton((int)_buttonToDestroy)) return;
 
         switch (_buttonToDestroy)
         {
             case ButtonToDestroy.Left:
+                if (Input.GetMouseButtonDown((int)ButtonToDestroy.Right))
+                    OnWrongTaskPointClick?.Invoke();
                 if (Input.GetMouseButton((int)ButtonToDestroy.Right)) return;
                 break;
             case ButtonToDestroy.Right:
+                if (Input.GetMouseButtonDown((int)ButtonToDestroy.Left))
+                    OnWrongTaskPointClick?.Invoke();
                 if (Input.GetMouseButton((int)ButtonToDestroy.Left)) return;
                 break;
         }
 
+        if(!Input.GetMouseButton((int)_buttonToDestroy)) return;
+
+
         _holding = true;
             OnHold();
-
-
-
 
     }
 
