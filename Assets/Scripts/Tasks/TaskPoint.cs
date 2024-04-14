@@ -4,38 +4,48 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using Random = UnityEngine.Random;
+using utils;
+using TMPro;
 
 public class TaskPoint : MonoBehaviour
 {
     public virtual event Action OnDestroyed;
-    [SerializeField]
-    int manaCost;
-
+ 
     bool _holding;
 
     [SerializeField]
     float maxHoldTime = 1.3f;
     float _currentHoldTime = 0f;
 
+    [SerializeField]
+    AnimationCurve _curve;
+
 
     GameObject _gfx;
+    
+
+    [SerializeField]
+    ButtonToDestroy _buttonToDestroy;
+
+    TMP_Text _buttonToDestroyText;
+    enum ButtonToDestroy
+    {
+        Left = 0,
+        Right = 1
+    }
 
 
     private void Awake()
     {
         _gfx = GetComponentInChildren<SpriteRenderer>().gameObject;
+        _buttonToDestroy = Utils.GetRandomEnum<ButtonToDestroy>();
+        _buttonToDestroyText = GetComponentInChildren<TMP_Text>();
+        _buttonToDestroyText.text = _buttonToDestroy.ToString().ToCharArray()[0].ToString();
     }
 
 
-    public virtual void OnMouseDown()
-    {
-        if (ManaBank.ManaCount > 0)
-            OnClick();
-        else
-            _holding = true;
 
-    }
-    
 
     private void Update()
     {
@@ -53,10 +63,12 @@ public class TaskPoint : MonoBehaviour
 
     private void OnMouseOver()
     {
-        if (!_holding)
-            return;
+        if (Input.GetMouseButton(((int)_buttonToDestroy)))
+        {
+            _holding = true;
+            OnHold();
 
-        OnHold();
+        }
 
 
     }
@@ -73,8 +85,6 @@ public class TaskPoint : MonoBehaviour
 
     public virtual void OnClick()
     {
-
-        ManaBank.RemoveMana(manaCost);
         OnDestroyed.Invoke();
         Destroy(gameObject, 0.1f);
 
@@ -100,8 +110,8 @@ public class TaskPoint : MonoBehaviour
     void UpdateSize()
     {
         Vector2 newSize;
-        newSize.x = Mathf.SmoothStep(1f, 0, Mathf.Pow((_currentHoldTime / maxHoldTime), 2.3f));
-        newSize.y = Mathf.SmoothStep(1f, 0, Mathf.Pow((_currentHoldTime / maxHoldTime), 2.3f));
+        newSize.x = 1 -  _curve.Evaluate(_currentHoldTime / maxHoldTime);
+        newSize.y = 1 - _curve.Evaluate(_currentHoldTime / maxHoldTime);
         _gfx.transform.localScale = newSize;
     }
 

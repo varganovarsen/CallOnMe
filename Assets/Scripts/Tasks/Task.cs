@@ -10,12 +10,17 @@ namespace Assets.Scripts.Tasks
     public class Task
     {
         [SerializeField]
-        List<Vector3> tasksPointsPositionsList;
+        private List<Vector3> tasksPointsPositionsList;
+
+        [SerializeField]
+        public int manaCost;
 
         Queue<Vector3> _taskPointPositions = new Queue<Vector3>();
 
         public Queue<Vector3> TaskPointPositions => _taskPointPositions;
-        
+
+        public List<Vector3> TasksPointsPositionsList { get => tasksPointsPositionsList; }
+
         public void Initialize()
         {
             _taskPointPositions = new Queue<Vector3>(tasksPointsPositionsList);

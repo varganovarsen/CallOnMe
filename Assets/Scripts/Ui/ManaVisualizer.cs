@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using TMPro;
+using Assets.Scripts.Tasks;
 
 namespace Assets.Scripts.Mana
 {
@@ -9,16 +10,22 @@ namespace Assets.Scripts.Mana
         [SerializeField]
         TMP_Text manaCounterText;
 
+        [SerializeField]
+        TMP_Text manaCostText;
+
 
         private void OnEnable()
         {
             ManaBank.instance.OnManaChanged += UpdateManaCounter;
+            TaskGiver.OnHoverTaskGiver += ShowManaCost;
+            TaskGiver.OnExitHoverTaskGiver += HideManaCost;
         }
 
 
         private void Start()
         {
             UpdateManaCounter(0);
+            HideManaCost();
         }
 
         void UpdateManaCounter(int amountToAdd)
@@ -29,6 +36,18 @@ namespace Assets.Scripts.Mana
         private void OnDisable()
         {
             ManaBank.instance.OnManaChanged -= UpdateManaCounter;
+            TaskGiver.OnHoverTaskGiver -= ShowManaCost;
+            TaskGiver.OnExitHoverTaskGiver -= HideManaCost;
+        }
+
+        private void ShowManaCost(Task task)
+        {
+            manaCostText.text = "-" + task.manaCost.ToString();
+        }
+
+        private void HideManaCost()
+        {
+            manaCostText.text = "";
         }
 
     }

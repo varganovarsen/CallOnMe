@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using utils;
+using Invoke = utils.Utils;
 
 public class LevelLoader : MonoBehaviour
 {
@@ -44,8 +45,8 @@ public class LevelLoader : MonoBehaviour
 
     public void UnloadUpworldScene(string sceneToUnload)
     {
-        CustomInvoke.Invoke(this, () => SceneManager.UnloadSceneAsync(sceneToUnload), CameraController.BlendTime);
-        CustomInvoke.Invoke(this, () => OnUpwordUloaded.Invoke(), CameraController.BlendTime);
+        Utils.Invoke(this, () => SceneManager.UnloadSceneAsync(sceneToUnload), CameraController.BlendTime);
+        Utils.Invoke(this, () => OnUpwordUloaded.Invoke(), CameraController.BlendTime);
     }
 
 
