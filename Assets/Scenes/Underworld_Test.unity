@@ -269,6 +269,7 @@ MonoBehaviour:
     - {x: 1.82, y: -1.07, z: 0}
     - {x: 0.46, y: -1.61, z: 0}
     manaCost: 10
+    spritesForTaskPoints: []
   _animationCurve:
     serializedVersion: 2
     m_Curve:
@@ -490,6 +491,7 @@ MonoBehaviour:
     - {x: 5.66, y: -0.52, z: 0}
     - {x: -7.52, y: -2.85, z: 0}
     manaCost: 10
+    spritesForTaskPoints: []
   _animationCurve:
     serializedVersion: 2
     m_Curve:
@@ -786,6 +788,7 @@ MonoBehaviour:
     - {x: -0.98, y: -0.28, z: 0}
     - {x: 1.24, y: 0.73, z: 0}
     manaCost: 10
+    spritesForTaskPoints: []
   _animationCurve:
     serializedVersion: 2
     m_Curve:
@@ -1304,11 +1307,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   task:
     tasksPointsPositionsList:
-    - {x: -6.44, y: -1.18, z: 0}
-    - {x: -2.07, y: 0.46, z: 0}
-    - {x: 0.63, y: -0.2, z: 0}
+    - {x: 4.5, y: 2.67, z: 0}
+    - {x: -5.17, y: 3.37, z: 0}
+    - {x: 4.3, y: -2.58, z: 0}
+    - {x: -5.15, y: -2.82, z: 0}
     - {x: -2.09, y: -3.85, z: 0}
+    - {x: -2.28, y: 0.74, z: 0}
+    - {x: 2.15, y: 1.69, z: 0}
+    - {x: 0.57, y: -1.67, z: 0}
+    - {x: 0.63, y: -0.17, z: 0}
     manaCost: 10
+    spritesForTaskPoints:
+    - {fileID: 5041904658042831948, guid: 7c888eafef85ba2478c827e232b14387, type: 3}
+    - {fileID: -967865574397634012, guid: 7c888eafef85ba2478c827e232b14387, type: 3}
+    - {fileID: -3839219803907178880, guid: 7c888eafef85ba2478c827e232b14387, type: 3}
+    - {fileID: 1506881509334804003, guid: 7c888eafef85ba2478c827e232b14387, type: 3}
+    - {fileID: 4898983020074370504, guid: 7c888eafef85ba2478c827e232b14387, type: 3}
   _animationCurve:
     serializedVersion: 2
     m_Curve:
@@ -1388,6 +1402,7 @@ MonoBehaviour:
     - {x: 1.4, y: 1.44, z: 0}
     - {x: -6.33, y: -0.97, z: 0}
     manaCost: 10
+    spritesForTaskPoints: []
   _animationCurve:
     serializedVersion: 2
     m_Curve:
@@ -1775,6 +1790,7 @@ MonoBehaviour:
     - {x: -4.57, y: -1.96, z: 0}
     - {x: 3.41, y: -2.35, z: 0}
     manaCost: 10
+    spritesForTaskPoints: []
   _animationCurve:
     serializedVersion: 2
     m_Curve:

@@ -11,7 +11,16 @@ namespace Assets.Scripts.Tasks
 
         public TaskPoint SpawnTaskPoint()
         {
-            return GameObject.Instantiate(taskPointPrefab, task.TaskPointPositions.Peek(), Quaternion.identity).GetComponent<TaskPoint>();
+            TaskPoint taskPoint = GameObject.Instantiate(taskPointPrefab, task.TaskPointPositions.Peek(), Quaternion.identity).GetComponent<TaskPoint>();
+
+            if (task.TasksPointsPositionsList.Count >0)
+                taskPoint.SetSprite(task.SpritesForTaskPoints[Random.Range(0, task.SpritesForTaskPoints.Length)]);
+            else
+            {
+                Debug.Log("There is no sprite on this task giver");
+            }
+            
+            return taskPoint;
         }
 
         public TaskPointFactory(Task _task, GameObject _taskPointPrefab)

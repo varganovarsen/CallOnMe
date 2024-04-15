@@ -23,11 +23,20 @@ public class LevelLoader : MonoBehaviour
             Instance = this;
         else
             Destroy(gameObject);
+
+        
     }
 
     private void Start()
     {
-        
+        int sceneCount = SceneManager.sceneCount;
+        bool _hasUIScene = false;
+        for (int i = 0; i < sceneCount; i++)
+        {
+            _hasUIScene = SceneManager.GetSceneAt(i).name.ToLower().Contains("UI");
+            if (_hasUIScene)
+                return;
+        }
 
         SceneManager.LoadScene("UI", LoadSceneMode.Additive);
     }

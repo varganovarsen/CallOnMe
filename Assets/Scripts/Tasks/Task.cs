@@ -15,6 +15,10 @@ namespace Assets.Scripts.Tasks
         [SerializeField]
         public int manaCost;
 
+        [SerializeField]
+        private Sprite[] spritesForTaskPoints;
+        public Sprite[] SpritesForTaskPoints => spritesForTaskPoints;
+
         Queue<Vector3> _taskPointPositions = new Queue<Vector3>();
 
         public Queue<Vector3> TaskPointPositions => _taskPointPositions;

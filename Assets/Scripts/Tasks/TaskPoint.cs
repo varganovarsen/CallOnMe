@@ -7,6 +7,7 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 using utils;
 using TMPro;
+using UnityEngine.UI;
 
 public class TaskPoint : MonoBehaviour
 {
@@ -22,7 +23,7 @@ public class TaskPoint : MonoBehaviour
     AnimationCurve _curve;
 
 
-    GameObject _gfx;
+    SpriteRenderer _gfx;
 
     public event Action OnWrongTaskPointClick;
 
@@ -30,7 +31,10 @@ public class TaskPoint : MonoBehaviour
     [SerializeField]
     ButtonToDestroy _buttonToDestroy;
 
-    TMP_Text _buttonToDestroyText;
+    [SerializeField]
+    Sprite[] buttonToDestroySprites;
+
+    Image _buttonToDestroyImage;
     enum ButtonToDestroy
     {
         Left = 0,
@@ -40,13 +44,16 @@ public class TaskPoint : MonoBehaviour
 
     private void Awake()
     {
-        _gfx = GetComponentInChildren<SpriteRenderer>().gameObject;
+        _gfx = GetComponentInChildren<SpriteRenderer>();
         _buttonToDestroy = Utils.GetRandomEnum<ButtonToDestroy>();
-        _buttonToDestroyText = GetComponentInChildren<TMP_Text>();
-        _buttonToDestroyText.text = _buttonToDestroy.ToString().ToCharArray()[0].ToString();
+        _buttonToDestroyImage = GetComponentInChildren<Image>();
+        _buttonToDestroyImage.sprite = buttonToDestroySprites[(int)_buttonToDestroy];
     }
 
-
+    public void SetSprite(Sprite sprite)
+    {
+        _gfx.sprite = sprite;
+    }
 
 
     private void Update()
