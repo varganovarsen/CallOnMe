@@ -14,11 +14,24 @@ public class TaskGiver : MonoBehaviour
 
 
     bool _interactable = true;
+    public bool Interactable { get => _interactable;
+        set
+        {
+            _interactable = value;
+
+            _collider.enabled = value;
+        }
+    }
+    Collider2D _collider;
+
     protected SpriteRenderer _gfx;
 
     [SerializeField]
     AnimationCurve _animationCurve;
     private Color _basicColor;
+
+    [SerializeField]
+    GameObject changeObjectTo;
 
     [SerializeField]
     Color buyForManaColor;
@@ -43,6 +56,8 @@ public class TaskGiver : MonoBehaviour
         }
     }
 
+   
+
     private void Awake()
     {
         task.Initialize();
@@ -52,6 +67,7 @@ public class TaskGiver : MonoBehaviour
     private void Start()
     {
         _basicColor = _gfx.color;
+        _collider = GetComponent<Collider2D>();
     }
 
     private void OnEnable()
@@ -75,7 +91,7 @@ public class TaskGiver : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if(_interactable)
+        if(Interactable)
         {
 
             if (Input.GetMouseButton(0) && !_holding)
@@ -88,7 +104,7 @@ public class TaskGiver : MonoBehaviour
 
     protected virtual void OnMouseOver()
     {
-        if (_interactable)
+        if (Interactable)
         {
 
             if (Input.GetMouseButton(1))
@@ -167,10 +183,10 @@ public class TaskGiver : MonoBehaviour
     protected virtual void ToggleInteractivity(Task task)
     {
 
-        if (_interactable)
+        if (Interactable)
         {
             Color newColor = _gfx.color;
-            newColor.a = 0.5f;
+            newColor.a = 0.9f;
             _gfx.color = newColor;
         }
         else
@@ -180,17 +196,17 @@ public class TaskGiver : MonoBehaviour
             _gfx.color = newColor;
         }
 
-        _interactable = !_interactable;
+        Interactable = !Interactable;
 
     }
 
     private void SetInteractivity()
     {
-        _interactable = true;
+        Interactable = true;
 
-        Color newColor = _gfx.color;
-        newColor.a = 1f;
-        _gfx.color = newColor;
+        //Color newColor = _gfx.color;
+        //newColor.a = 1f;
+        //_gfx.color = newColor;
     }
 
     public virtual void CompleteTaskGiver(Task endedTask)
@@ -200,7 +216,12 @@ public class TaskGiver : MonoBehaviour
             //TODO: implement animation
             TaskController.instance.OnTaskStarted -= ToggleInteractivity;
 
-            Destroy(gameObject);
+            Interactable = false;
+            if (changeObjectTo)
+            {
+                changeObjectTo.SetActive(true);
+                gameObject.SetActive(false);
+            }
         }
     }
 
@@ -213,9 +234,9 @@ public class TaskGiver : MonoBehaviour
 
     public void NotEnoughManaAnimation()
     {
-        _interactable=false;
+        Interactable=false;
         OnNotEnoughMana?.Invoke();
-        LeanTween.color(_gfx.gameObject, Color.red, 0.15f).setLoopPingPong(1).setOnComplete(() => _interactable = true);
+        LeanTween.color(_gfx.gameObject, Color.red, 0.15f).setLoopPingPong(1).setOnComplete(() => Interactable = true);
 
     }
 

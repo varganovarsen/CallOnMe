@@ -27,42 +27,18 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: task.tasksPointsPositionsList.Array.size
-    value: 3
+    value: 1
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: task.tasksPointsPositionsList.Array.data[0].x
-    value: 0.07
+    value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: task.tasksPointsPositionsList.Array.data[0].y
-    value: 0.04
+    value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: task.tasksPointsPositionsList.Array.data[0].z
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: task.tasksPointsPositionsList.Array.data[1].x
-    value: 2.48
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: task.tasksPointsPositionsList.Array.data[1].y
-    value: 0.26
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: task.tasksPointsPositionsList.Array.data[1].z
-    value: 0
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: task.tasksPointsPositionsList.Array.data[2].x
-    value: -2.56
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: task.tasksPointsPositionsList.Array.data[2].y
-    value: 0.21
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: task.tasksPointsPositionsList.Array.data[2].z
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
@@ -212,6 +188,10 @@ Preset:
   - target: {fileID: 0}
     propertyPath: _animationCurve.m_RotationOrder
     value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: changeSpriteTo
+    value: 
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: buyForManaColor.r
