@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using utils;
+using System.Linq;
 
 public class CameraController : MonoBehaviour
 {
@@ -11,6 +13,23 @@ public class CameraController : MonoBehaviour
     CinemachineVirtualCamera _underworld;
 
     public static float BlendTime;
+    static List<float> TransitionDelays = new List<float>();
+    public static float TransitionDelay
+    {
+        set
+        {
+            float v = Mathf.Clamp(value, 0, Mathf.Infinity);
+            TransitionDelays.Add(v);
+        }
+
+        get
+        {
+            if (TransitionDelays.Count > 0)
+            return TransitionDelays.Max();
+            else
+            return 0;
+        }
+    }
     private void OnEnable()
     {
         LevelLoader.Instance.OnUpworldLoaded += ToggleCameras;
@@ -26,6 +45,11 @@ public class CameraController : MonoBehaviour
     }
 
     public void ToggleCameras()
+    {
+        Utils.Invoke(this, ToggleCameraPriority, TransitionDelay);
+    }
+
+    private void ToggleCameraPriority()
     {
         if (DealController.IsOnDeal)
         {

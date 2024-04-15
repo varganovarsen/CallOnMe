@@ -57,14 +57,14 @@ public class TaskGiver : MonoBehaviour
     {
         TaskController.instance.OnTaskStarted += ToggleInteractivity;
         TaskController.instance.OnTaskEnded += ToggleInteractivity;
-        LevelLoader.Instance.OnUpwordUloaded += SetInteractivity;
+        LevelLoader.Instance.OnUpwordUnloaded += SetInteractivity;
     }
 
     private void OnDisable()
     {
         TaskController.instance.OnTaskStarted -= ToggleInteractivity;
         TaskController.instance.OnTaskEnded -= ToggleInteractivity;
-        LevelLoader.Instance.OnUpwordUloaded -= SetInteractivity;
+        LevelLoader.Instance.OnUpwordUnloaded -= SetInteractivity;
     }
 
     private void OnMouseEnter()

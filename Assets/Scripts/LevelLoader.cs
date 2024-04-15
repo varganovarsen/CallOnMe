@@ -14,7 +14,7 @@ public class LevelLoader : MonoBehaviour
     GameObject CameraPrefab;
 
     public event Action OnUpworldLoaded;
-    public event Action OnUpwordUloaded;
+    public event Action OnUpwordUnloaded;
 
 
     private void Awake()
@@ -46,7 +46,7 @@ public class LevelLoader : MonoBehaviour
     public void UnloadUpworldScene(string sceneToUnload)
     {
         Utils.Invoke(this, () => SceneManager.UnloadSceneAsync(sceneToUnload), CameraController.BlendTime);
-        Utils.Invoke(this, () => OnUpwordUloaded.Invoke(), CameraController.BlendTime);
+        Utils.Invoke(this, () => OnUpwordUnloaded.Invoke(), CameraController.BlendTime);
     }
 
 
