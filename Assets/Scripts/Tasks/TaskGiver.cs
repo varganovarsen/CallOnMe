@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+[RequireComponent(typeof(Collider2D))]
 public class TaskGiver : MonoBehaviour
 {
     [SerializeField]
@@ -222,6 +223,10 @@ public class TaskGiver : MonoBehaviour
     {
         if (task is not null)
         {
+
+            if (task.TasksPointsPositionsList.Count < 0)
+                return;
+
             foreach (var taskPointPosition in task.TasksPointsPositionsList)
             {
                 Gizmos.color = Color.red;

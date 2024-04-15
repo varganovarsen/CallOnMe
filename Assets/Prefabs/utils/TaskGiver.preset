@@ -1,0 +1,236 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!181963792 &2655988077585873504
+Preset:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: TaskGiver
+  m_TargetType:
+    m_NativeTypeID: 114
+    m_ManagedTypePPtr: {fileID: 11500000, guid: f344052deeb54544db9b0b2e3ead1f1e,
+      type: 3}
+    m_ManagedTypeFallback: 
+  m_Properties:
+  - target: {fileID: 0}
+    propertyPath: m_Enabled
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorHideFlags
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorClassIdentifier
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: task.tasksPointsPositionsList.Array.size
+    value: 3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: task.tasksPointsPositionsList.Array.data[0].x
+    value: 0.07
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: task.tasksPointsPositionsList.Array.data[0].y
+    value: 0.04
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: task.tasksPointsPositionsList.Array.data[0].z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: task.tasksPointsPositionsList.Array.data[1].x
+    value: 2.48
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: task.tasksPointsPositionsList.Array.data[1].y
+    value: 0.26
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: task.tasksPointsPositionsList.Array.data[1].z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: task.tasksPointsPositionsList.Array.data[2].x
+    value: -2.56
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: task.tasksPointsPositionsList.Array.data[2].y
+    value: 0.21
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: task.tasksPointsPositionsList.Array.data[2].z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: task.manaCost
+    value: 10
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _animationCurve.m_Curve.Array.size
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _animationCurve.m_Curve.Array.data[0].time
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _animationCurve.m_Curve.Array.data[0].value
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _animationCurve.m_Curve.Array.data[0].inSlope
+    value: 5.8037486
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _animationCurve.m_Curve.Array.data[0].outSlope
+    value: 5.8037486
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _animationCurve.m_Curve.Array.data[0].tangentMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _animationCurve.m_Curve.Array.data[0].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _animationCurve.m_Curve.Array.data[0].inWeight
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _animationCurve.m_Curve.Array.data[0].outWeight
+    value: 0.018286815
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _animationCurve.m_Curve.Array.data[1].time
+    value: 0.1951457
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _animationCurve.m_Curve.Array.data[1].value
+    value: 0.36834496
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _animationCurve.m_Curve.Array.data[1].inSlope
+    value: 0.65220517
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _animationCurve.m_Curve.Array.data[1].outSlope
+    value: 0.65220517
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _animationCurve.m_Curve.Array.data[1].tangentMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _animationCurve.m_Curve.Array.data[1].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _animationCurve.m_Curve.Array.data[1].inWeight
+    value: 0.15791279
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _animationCurve.m_Curve.Array.data[1].outWeight
+    value: 0.039488297
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _animationCurve.m_Curve.Array.data[2].time
+    value: 0.9469497
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _animationCurve.m_Curve.Array.data[2].value
+    value: 0.81115663
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _animationCurve.m_Curve.Array.data[2].inSlope
+    value: 0.31317288
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _animationCurve.m_Curve.Array.data[2].outSlope
+    value: 0.31317288
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _animationCurve.m_Curve.Array.data[2].tangentMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _animationCurve.m_Curve.Array.data[2].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _animationCurve.m_Curve.Array.data[2].inWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _animationCurve.m_Curve.Array.data[2].outWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _animationCurve.m_Curve.Array.data[3].time
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _animationCurve.m_Curve.Array.data[3].value
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _animationCurve.m_Curve.Array.data[3].inSlope
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _animationCurve.m_Curve.Array.data[3].outSlope
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _animationCurve.m_Curve.Array.data[3].tangentMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _animationCurve.m_Curve.Array.data[3].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _animationCurve.m_Curve.Array.data[3].inWeight
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _animationCurve.m_Curve.Array.data[3].outWeight
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _animationCurve.m_PreInfinity
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _animationCurve.m_PostInfinity
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _animationCurve.m_RotationOrder
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: buyForManaColor.r
+    value: 0.23667802
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: buyForManaColor.g
+    value: 0.15686274
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: buyForManaColor.b
+    value: 0.77254903
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: buyForManaColor.a
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: maxHoldTime
+    value: 0.8
+    objectReference: {fileID: 0}
+  m_ExcludedProperties: []
