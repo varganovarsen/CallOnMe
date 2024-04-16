@@ -4,6 +4,7 @@ using UnityEngine;
 using Cinemachine;
 using utils;
 using System.Linq;
+using Assets.Scripts.Deals;
 
 public class CameraController : MonoBehaviour
 {
@@ -45,6 +46,10 @@ public class CameraController : MonoBehaviour
     }
 
     public void ToggleCameras()
+    {
+        Utils.Invoke(this, ToggleCameraPriority, TransitionDelay);
+    }
+    public void ToggleCameras(Deal deal)
     {
         Utils.Invoke(this, ToggleCameraPriority, TransitionDelay);
     }

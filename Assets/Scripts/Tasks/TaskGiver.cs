@@ -10,6 +10,8 @@ public class TaskGiver : MonoBehaviour
 {
     [SerializeField]
     protected Task task;
+    const string testTaskPath = "Tasks/testTask";
+
 
 
 
@@ -56,10 +58,17 @@ public class TaskGiver : MonoBehaviour
         }
     }
 
-   
+    private void OnValidate()
+    {
+        if (!task) {
+            task =  Resources.Load(testTaskPath) as Task;
+        }
+    }
+
 
     private void Awake()
     {
+
         task.Initialize();
         _gfx = GetComponent<SpriteRenderer>();
     }
@@ -256,3 +265,4 @@ public class TaskGiver : MonoBehaviour
         }
     }
 }
+

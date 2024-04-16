@@ -50,9 +50,9 @@ namespace Assets.Scripts.Tasks
         public void OnTaskPointDesroyed()
         {
             currentPoint.OnDestroyed -= OnTaskPointDesroyed;
-            currentTask.TaskPointPositions.Dequeue();
+            taskPointFactory.TaskPointPositions.Dequeue();
 
-            if(currentTask.TaskPointPositions.Count > 0)
+            if(taskPointFactory.TaskPointPositions.Count > 0)
             {
                 currentPoint = taskPointFactory.SpawnTaskPoint();
                 currentPoint.OnDestroyed += OnTaskPointDesroyed;
@@ -80,7 +80,7 @@ namespace Assets.Scripts.Tasks
         public void EndTask()
         {
             OnTaskEnded.Invoke(currentTask);
-            currentTask = null;
+            //currentTask = null;
             currentPoint = null;
 
         }

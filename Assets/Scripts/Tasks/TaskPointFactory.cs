@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Assets.Scripts.Tasks
@@ -9,9 +10,11 @@ namespace Assets.Scripts.Tasks
 
         GameObject taskPointPrefab;
 
+       public Queue<Vector3> TaskPointPositions = new Queue<Vector3>();
+
         public TaskPoint SpawnTaskPoint()
         {
-            TaskPoint taskPoint = GameObject.Instantiate(taskPointPrefab, task.TaskPointPositions.Peek(), Quaternion.identity).GetComponent<TaskPoint>();
+            TaskPoint taskPoint = GameObject.Instantiate(taskPointPrefab, TaskPointPositions.Peek(), Quaternion.identity).GetComponent<TaskPoint>();
 
             if (task.TasksPointsPositionsList.Count >0)
                 taskPoint.SetSprite(task.SpritesForTaskPoints[Random.Range(0, task.SpritesForTaskPoints.Length)]);
@@ -27,6 +30,8 @@ namespace Assets.Scripts.Tasks
         {
             task = _task;
             taskPointPrefab = _taskPointPrefab;
+
+            TaskPointPositions = new Queue<Vector3>(task.tasksPointsPositionsList);
         }
        
     }

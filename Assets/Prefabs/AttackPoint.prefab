@@ -146,3 +146,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   _buttonToDestroy: 0
+  buttonToDestroySprites:
+  - {fileID: 21300000, guid: dbd01104a91c1294fb348f7a693c5a9e, type: 3}
+  - {fileID: 21300000, guid: a67d7278ebc224b4d8e2fa46d076d8aa, type: 3}
+  manaDamage: 1

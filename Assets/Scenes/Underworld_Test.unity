@@ -259,17 +259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f344052deeb54544db9b0b2e3ead1f1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  task:
-    tasksPointsPositionsList:
-    - {x: 0.96, y: 2.76, z: 0}
-    - {x: 1.25, y: 0.6, z: 0}
-    - {x: 1.25, y: 0.6, z: 0}
-    - {x: 2.05, y: 2.02, z: 0}
-    - {x: 0.25, y: 0.17, z: 0}
-    - {x: 1.82, y: -1.07, z: 0}
-    - {x: 0.46, y: -1.61, z: 0}
-    manaCost: 10
-    spritesForTaskPoints: []
+  task: {fileID: 11400000, guid: 06c24d3af9b042a488011eed417e9d82, type: 2}
   _animationCurve:
     serializedVersion: 2
     m_Curve:
@@ -344,7 +334,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &564821444
 GameObject:
@@ -375,7 +365,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &696320342
 GameObject:
@@ -461,6 +451,50 @@ SpriteMask:
   m_BackSortingOrder: 0
   m_IsCustomRangeActive: 0
   m_SpriteSortPoint: 0
+--- !u!1 &710443666
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 710443667}
+  - component: {fileID: 710443668}
+  m_Layer: 0
+  m_Name: DialogueManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &710443667
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 710443666}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &710443668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 710443666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 482c4a91b7e5d694eac561d70c08400a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &846387108 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8047128721911123150, guid: 05192b7ad3d8bdd43adedf48042a999b,
@@ -479,19 +513,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f344052deeb54544db9b0b2e3ead1f1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  task:
-    tasksPointsPositionsList:
-    - {x: 3.7, y: -2.36, z: 0}
-    - {x: 0.85, y: 2.81, z: 0}
-    - {x: -4.96, y: 2.48, z: 0}
-    - {x: 5.45, y: 2.84, z: 0}
-    - {x: -5.11, y: -1.63, z: 0}
-    - {x: 2.75, y: 1.03, z: 0}
-    - {x: -7.33, y: 0.25, z: 0}
-    - {x: 5.66, y: -0.52, z: 0}
-    - {x: -7.52, y: -2.85, z: 0}
-    manaCost: 10
-    spritesForTaskPoints: []
+  task: {fileID: 11400000, guid: 06c24d3af9b042a488011eed417e9d82, type: 2}
   _animationCurve:
     serializedVersion: 2
     m_Curve:
@@ -714,7 +736,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &954380505 stripped
 GameObject:
@@ -779,16 +801,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f344052deeb54544db9b0b2e3ead1f1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  task:
-    tasksPointsPositionsList:
-    - {x: -3.31, y: 1.94, z: 0}
-    - {x: 1.61, y: 2.59, z: 0}
-    - {x: -4.87, y: -2.89, z: 0}
-    - {x: 1.44, y: -1.44, z: 0}
-    - {x: -0.98, y: -0.28, z: 0}
-    - {x: 1.24, y: 0.73, z: 0}
-    manaCost: 10
-    spritesForTaskPoints: []
+  task: {fileID: 11400000, guid: 06c24d3af9b042a488011eed417e9d82, type: 2}
   _animationCurve:
     serializedVersion: 2
     m_Curve:
@@ -886,7 +899,7 @@ PrefabInstance:
     - target: {fileID: -7552582706839291426, guid: 05192b7ad3d8bdd43adedf48042a999b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 05192b7ad3d8bdd43adedf48042a999b,
         type: 3}
@@ -1214,6 +1227,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1035196949}
+    - targetCorrespondingSourceObject: {fileID: 5140901451421066716, guid: 05192b7ad3d8bdd43adedf48042a999b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2079497800}
     - targetCorrespondingSourceObject: {fileID: 1571638137860112400, guid: 05192b7ad3d8bdd43adedf48042a999b,
         type: 3}
       insertIndex: -1
@@ -1305,24 +1322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f344052deeb54544db9b0b2e3ead1f1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  task:
-    tasksPointsPositionsList:
-    - {x: 4.5, y: 2.67, z: 0}
-    - {x: -5.17, y: 3.37, z: 0}
-    - {x: 4.3, y: -2.58, z: 0}
-    - {x: -5.15, y: -2.82, z: 0}
-    - {x: -2.09, y: -3.85, z: 0}
-    - {x: -2.28, y: 0.74, z: 0}
-    - {x: 2.15, y: 1.69, z: 0}
-    - {x: 0.57, y: -1.67, z: 0}
-    - {x: 0.63, y: -0.17, z: 0}
-    manaCost: 10
-    spritesForTaskPoints:
-    - {fileID: 5041904658042831948, guid: 7c888eafef85ba2478c827e232b14387, type: 3}
-    - {fileID: -967865574397634012, guid: 7c888eafef85ba2478c827e232b14387, type: 3}
-    - {fileID: -3839219803907178880, guid: 7c888eafef85ba2478c827e232b14387, type: 3}
-    - {fileID: 1506881509334804003, guid: 7c888eafef85ba2478c827e232b14387, type: 3}
-    - {fileID: 4898983020074370504, guid: 7c888eafef85ba2478c827e232b14387, type: 3}
+  task: {fileID: 11400000, guid: 06c24d3af9b042a488011eed417e9d82, type: 2}
   _animationCurve:
     serializedVersion: 2
     m_Curve:
@@ -1392,17 +1392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f344052deeb54544db9b0b2e3ead1f1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  task:
-    tasksPointsPositionsList:
-    - {x: -2.3, y: 0.81, z: 0}
-    - {x: 1.4, y: 1.44, z: 0}
-    - {x: -2.36, y: 0.83, z: 0}
-    - {x: 1.4, y: 1.44, z: 0}
-    - {x: -4.38, y: 0.1, z: 0}
-    - {x: 1.4, y: 1.44, z: 0}
-    - {x: -6.33, y: -0.97, z: 0}
-    manaCost: 10
-    spritesForTaskPoints: []
+  task: {fileID: 11400000, guid: 06c24d3af9b042a488011eed417e9d82, type: 2}
   _animationCurve:
     serializedVersion: 2
     m_Curve:
@@ -1545,7 +1535,7 @@ PrefabInstance:
     - target: {fileID: 4842762884223690040, guid: d33724cc84b791b4abb38af5ea9a927e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 4842762884223690040, guid: d33724cc84b791b4abb38af5ea9a927e,
         type: 3}
@@ -1608,6 +1598,51 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1035196946}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1335143389
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1335143391}
+  - component: {fileID: 1335143390}
+  m_Layer: 0
+  m_Name: StoryPointController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1335143390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1335143389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86744f7a22fe7b64f93a8e5a49234fe8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storyPoint: {fileID: 11400000, guid: f40656ec9f38e2c47976f367b2e5e834, type: 2}
+--- !u!4 &1335143391
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1335143389}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.67184496, y: -1.6375477, z: 6.007175}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1365504213
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1629,7 +1664,7 @@ PrefabInstance:
     - target: {fileID: 4967758282721145930, guid: 2f6ba87129032d24f97b39b27206542b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4967758282721145930, guid: 2f6ba87129032d24f97b39b27206542b,
         type: 3}
@@ -1756,7 +1791,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1711694175 stripped
 GameObject:
@@ -1764,6 +1799,71 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1035196946}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1729629862
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1729629864}
+  - component: {fileID: 1729629863}
+  - component: {fileID: 1729629865}
+  m_Layer: 0
+  m_Name: Timer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1729629863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1729629862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed8341328655c8d4f95075f5f0521be9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  runOutTime: 47
+  timeKoefficent: 6.38
+  startTime: 1033
+--- !u!4 &1729629864
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1729629862}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.15829998, y: -0.010790527, z: -0.12933873}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1729629865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1729629862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d800df8319dd714ab4a1205b1908ae4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  condition:
+    conditionEnum: 5
+    deal: {fileID: 0}
+    task: {fileID: 0}
+  storyPoint: {fileID: 11400000, guid: f40656ec9f38e2c47976f367b2e5e834, type: 2}
 --- !u!1 &1840982184 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 698686260613912575, guid: 05192b7ad3d8bdd43adedf48042a999b,
@@ -1782,15 +1882,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f344052deeb54544db9b0b2e3ead1f1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  task:
-    tasksPointsPositionsList:
-    - {x: 0, y: 0, z: 0}
-    - {x: 2.44, y: 1.66, z: 0}
-    - {x: -4.32, y: 1.6, z: 0}
-    - {x: -4.57, y: -1.96, z: 0}
-    - {x: 3.41, y: -2.35, z: 0}
-    manaCost: 10
-    spritesForTaskPoints: []
+  task: {fileID: 11400000, guid: 06c24d3af9b042a488011eed417e9d82, type: 2}
   _animationCurve:
     serializedVersion: 2
     m_Curve:
@@ -1910,7 +2002,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2055278826
 GameObject:
@@ -1978,7 +2070,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2079497797 stripped
 GameObject:
@@ -1986,6 +2078,23 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1035196946}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2079497800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2079497797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d800df8319dd714ab4a1205b1908ae4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  condition:
+    conditionEnum: 3
+    deal: {fileID: 0}
+    task: {fileID: 11400000, guid: 06c24d3af9b042a488011eed417e9d82, type: 2}
+  storyPoint: {fileID: 11400000, guid: 6e7f1f986516ce240b1b6ae2b700531d, type: 2}
 --- !u!1 &2096139949 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -6593176707231172943, guid: 05192b7ad3d8bdd43adedf48042a999b,
@@ -2003,7 +2112,7 @@ PrefabInstance:
     - target: {fileID: 3437453649044841847, guid: 5af756a6e587dd84e9c51acd650fe7e5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3437453649044841847, guid: 5af756a6e587dd84e9c51acd650fe7e5,
         type: 3}
@@ -2211,7 +2320,7 @@ PrefabInstance:
     - target: {fileID: 4545356720406060749, guid: 22708e8ab9dd8fb43b986b6203fab77f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4545356720406060749, guid: 22708e8ab9dd8fb43b986b6203fab77f,
         type: 3}
@@ -2395,7 +2504,7 @@ PrefabInstance:
     - target: {fileID: 1672973497257378335, guid: ead9947a87897884686f1df17683031e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1672973497257378335, guid: ead9947a87897884686f1df17683031e,
         type: 3}
@@ -2468,7 +2577,7 @@ PrefabInstance:
     - target: {fileID: 3292535449846881385, guid: 8283515f03ba1a047bca8bdc87b0c499,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3292535449846881385, guid: 8283515f03ba1a047bca8bdc87b0c499,
         type: 3}
@@ -2546,7 +2655,7 @@ PrefabInstance:
     - target: {fileID: 904910676372853890, guid: 54f6b8c2cd07a5e4cae0f7b4ee768e11,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 904910676372853890, guid: 54f6b8c2cd07a5e4cae0f7b4ee768e11,
         type: 3}

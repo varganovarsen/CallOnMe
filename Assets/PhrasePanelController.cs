@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using utils;
 
 public class PhrasePanelController : MonoBehaviour
 {
@@ -19,11 +21,17 @@ public class PhrasePanelController : MonoBehaviour
     float hideTime;
     [SerializeField]
     LeanTweenType hideCurve;
+    [SerializeField]
+    float delayAfterPhrase;
 
     [SerializeField, Space]
     Vector3 hidePosition;
     [SerializeField]
     Vector3 showPosition;
+
+    public event Action OnPhraseComplete;
+
+
 
     public void Initialize(string text)
     {
@@ -31,13 +39,38 @@ public class PhrasePanelController : MonoBehaviour
         m_Text.text = text;
         Animate();
     }
+    private void OnEnable()
+    {
+        OnPhraseComplete += SelfDestroy;
+    }
 
-        public void Animate()
+    private void OnDisable()
+    {
+        OnPhraseComplete -= SelfDestroy;
+    }
+
+    void SelfDestroy() => Destroy(gameObject);
+
+    public void Initialize(Phrase phraseToDraw)
+    {
+        m_Text = GetComponentInChildren<TMP_Text>();
+        m_Text.text = phraseToDraw.phraseText;
+        stayTime = phraseToDraw.holdTime;
+        delayAfterPhrase = phraseToDraw.waitAfterTime;
+
+        Animate();
+    }
+
+    public void Animate()
         {
             LeanTween.moveY(gameObject, showPosition.y, showTime).setEase(showCurve).setDelay(0.1f);
-            LeanTween.moveY(gameObject, hidePosition.y, hideTime).setEase(hideCurve).setDelay(stayTime)
-            .setOnComplete(() => Destroy(gameObject, 0.2f));
+        LeanTween.moveY(gameObject, hidePosition.y, hideTime).setEase(hideCurve).setDelay(stayTime);
+
+        Utils.Invoke(this, () => OnPhraseComplete.Invoke(), showTime + stayTime + hideTime + delayAfterPhrase);
+            
         }
+
+
       
 
 }

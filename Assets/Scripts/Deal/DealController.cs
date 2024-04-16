@@ -24,7 +24,7 @@ public class DealController : MonoBehaviour
 
     public event Action<Deal> OnOfferDeal;
     public event Action<Deal> OnAcceptDeal;
-    public event Action OnCompleteDeal;
+    public event Action<Deal> OnCompleteDeal;
 
     int enemyCount = 0;
     public int EnemyCount
@@ -109,7 +109,7 @@ public class DealController : MonoBehaviour
         _isOnDeal = false;
         _currentDeal = null;
        Deal _completedDeal =  _dealQueue?.Dequeue();
-        OnCompleteDeal.Invoke();
+        OnCompleteDeal.Invoke(_completedDeal);
 
 
         ManaBank.AddMana(_completedDeal.manaCount);

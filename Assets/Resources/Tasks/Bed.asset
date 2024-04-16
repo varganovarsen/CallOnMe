@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4e96261090b8e54fa603105e2a5d362, type: 3}
+  m_Name: Bed
+  m_EditorClassIdentifier: 
+  tasksPointsPositionsList:
+  - {x: -1.8490837, y: -1.204751, z: 0}
+  - {x: -4.8546066, y: 0.43557453, z: 0}
+  - {x: -1.571789, y: 1.2939013, z: 0}
+  - {x: -0.02075243, y: -0.7294364, z: 0}
+  - {x: 3.2088099, y: -1.3629538, z: 0}
+  - {x: 2.9432065, y: -2.8369656, z: 0}
+  - {x: 4.011575, y: 1.9187505, z: 0}
+  - {x: -4.4585094, y: -2.3376083, z: 0}
+  - {x: -2.4688241, y: 1.1870006, z: 0}
+  - {x: 3.461147, y: 1.4720238, z: 0}
+  manaCost: 0
+  spritesForTaskPoints:
+  - {fileID: 5041904658042831948, guid: 7c888eafef85ba2478c827e232b14387, type: 3}
+  - {fileID: -967865574397634012, guid: 7c888eafef85ba2478c827e232b14387, type: 3}
+  - {fileID: -3839219803907178880, guid: 7c888eafef85ba2478c827e232b14387, type: 3}
+  - {fileID: 1506881509334804003, guid: 7c888eafef85ba2478c827e232b14387, type: 3}
+  - {fileID: 4898983020074370504, guid: 7c888eafef85ba2478c827e232b14387, type: 3}
