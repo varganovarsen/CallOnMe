@@ -3,6 +3,7 @@ using Assets.Scripts.Tasks;
 using StoryPoints;
 using System;
 using UnityEngine;
+using utils;
 
 public class StoryPointInvoker : MonoBehaviour
 {
@@ -28,10 +29,13 @@ public class StoryPointInvoker : MonoBehaviour
         switch (condition.conditionEnum)
         {
             case StoryPointConditionEnum.AcceptDeal:
-                DealController.instance.OnAcceptDeal += InvokeStoryPoint;
+                DealController.instance.OnAcceptDeal += InvokeWithCameraBlendTimeDelay;
+                break;
+            case StoryPointConditionEnum.OfferDeal:
+                DealController.instance.OnOfferDeal += InvokeStoryPoint;
                 break;
             case StoryPointConditionEnum.EndDeal:
-                DealController.instance.OnCompleteDeal += InvokeStoryPoint;
+                DealController.instance.OnCompleteDeal += InvokeWithCameraBlendTimeDelay;
                 break;
             case StoryPointConditionEnum.StartTask:
                 TaskController.instance.OnTaskStarted += InvokeStoryPoint;
@@ -64,6 +68,12 @@ public class StoryPointInvoker : MonoBehaviour
     void InvokeTimerStoryPoint()
     {
         OnStoryPointReached?.Invoke(storyPoint);
+    }
+
+    void InvokeWithCameraBlendTimeDelay(Deal deal)
+    {
+        if(deal == condition.deal)
+        Utils.Invoke(this, () => OnStoryPointReached?.Invoke(storyPoint), CameraController.BlendTime + 1f);
     }
 
 

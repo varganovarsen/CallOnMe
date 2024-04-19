@@ -40,7 +40,7 @@ public class Timer : MonoBehaviour
 
         _currentTime += Time.deltaTime / timeKoefficent;
 
-        if (_currentTime > runOutTime)
+        if (CurrentTime > RunOutTime && !TimeRunOut)
         {
             OnTimerRunOut.Invoke();
             TimeRunOut = true;

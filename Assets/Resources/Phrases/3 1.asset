@@ -9,11 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4e96261090b8e54fa603105e2a5d362, type: 3}
-  m_Name: testTask
+  m_Script: {fileID: 11500000, guid: 9f45822cc1385344e96bbd654297b5ac, type: 3}
+  m_Name: 3 1
   m_EditorClassIdentifier: 
-  tasksPointsPositionsList:
-  - {x: 0.18, y: 9.54, z: 0}
-  manaCost: 0
-  spritesForTaskPoints:
-  - {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  phraseText: But it wasn't enough time
+  holdTime: 1.75
+  waitAfterTime: 0

@@ -119,7 +119,7 @@ public class DealController : MonoBehaviour
 
     private void Start()
     {
-        Invoke(nameof(OfferDeal), 3f);
+        
     }
 
     // Debug!!!!

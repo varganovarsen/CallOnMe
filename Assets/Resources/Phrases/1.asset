@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f45822cc1385344e96bbd654297b5ac, type: 3}
   m_Name: 1
   m_EditorClassIdentifier: 
-  phraseText: "\u042F \u0444\u0440\u0430\u0437\u0430 \u043D\u043E\u043C\u0435\u0440
-    1"
+  phraseText: It's gama about a demon
   holdTime: 1.75
   waitAfterTime: 0

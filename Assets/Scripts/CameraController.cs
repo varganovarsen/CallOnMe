@@ -5,6 +5,7 @@ using Cinemachine;
 using utils;
 using System.Linq;
 using Assets.Scripts.Deals;
+using System;
 
 public class CameraController : MonoBehaviour
 {
@@ -15,6 +16,9 @@ public class CameraController : MonoBehaviour
 
     public static float BlendTime;
     static List<float> TransitionDelays = new List<float>();
+
+    public static event Action CameraTransitionStarted;
+    public static event Action CameraTransitionEnded;
     public static float TransitionDelay
     {
         set
@@ -56,6 +60,8 @@ public class CameraController : MonoBehaviour
 
     private void ToggleCameraPriority()
     {
+        CameraTransitionStarted?.Invoke();
+
         if (DealController.IsOnDeal)
         {
             _underworld.Priority = 0;
@@ -66,11 +72,14 @@ public class CameraController : MonoBehaviour
             _underworld.Priority = 1;
             _upworld.Priority = 0;
         }
+
+        Utils.Invoke(this, () => CameraTransitionEnded?.Invoke(), TransitionDelay);
     }
 
     private void OnDisable()
     {
         LevelLoader.Instance.OnUpworldLoaded -= ToggleCameras;
+        DealController.instance.OnCompleteDeal -= ToggleCameras;
     }
 
 }

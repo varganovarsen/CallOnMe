@@ -1,3 +1,4 @@
+using Assets.Scripts.Deals;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,7 +10,9 @@ public class DemonAnimationController : MonoBehaviour
     float teleportationTime;
     public static float TeleportationTime;
     [SerializeField]
-    Transform teleportToPoint;
+    Vector3 teleportToPoint;
+    [SerializeField]
+    Vector3 teleportBackToPoint;
     [SerializeField]
     LeanTweenType _teleportationEase;
 
@@ -33,18 +36,25 @@ public class DemonAnimationController : MonoBehaviour
 
     private void Start()
     {
-        LevelLoader.Instance.OnUpworldLoaded += Teleport;
+        DealController.instance.OnAcceptDeal += Teleport;
+        DealController.instance.OnCompleteDeal += Teleport;
     }
 
-    public void Teleport()
+    private void OnDisable()
+    {
+        DealController.instance.OnAcceptDeal -= Teleport;
+        DealController.instance.OnCompleteDeal -= Teleport;
+    }
+
+    public void Teleport(Deal deal)
     {
         _teleportationMask.enabled = true;
 
         LeanTween.scale(_teleportationMask.gameObject, _teleportationMaskScale, teleportationTime).setEase(_teleportationEase)
-            .setOnComplete(() => transform.position = teleportToPoint.position);
+            .setOnComplete(() => transform.position = DealController.IsOnDeal ? teleportBackToPoint : teleportToPoint);
 
         LeanTween.scale(_teleportationMask.gameObject, Vector3.zero, teleportationTime).setEase(_teleportationEase)
-            .setDelay(Mathf.Clamp(CameraController.BlendTime + CameraController.TransitionDelay, 0f, Mathf.Infinity))
+            .setDelay(CameraController.TransitionDelay + CameraController.BlendTime)
             .setOnComplete(() => _teleportationMask.enabled = false);
         
 
