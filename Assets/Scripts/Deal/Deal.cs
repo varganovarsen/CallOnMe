@@ -16,6 +16,9 @@ namespace Assets.Scripts.Deals
         [SerializeField]
         public int enemyCount;
 
+        [SerializeField]
+        public PhraseList phonecallPhraseList;
+
 
     }
 }
