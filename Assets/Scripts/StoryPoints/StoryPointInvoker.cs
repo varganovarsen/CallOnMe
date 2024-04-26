@@ -26,9 +26,8 @@ public class StoryPointInvoker : MonoBehaviour
     private void OnValidate()
     {
 
-        if (condition.task is null)
+        if (condition._needsTaskReference() && condition.task is null && TryGetComponent(out TaskGiver tg))
         {
-            TryGetComponent(out TaskGiver tg);
             if(tg)
                 condition.task = tg.Task;
         }

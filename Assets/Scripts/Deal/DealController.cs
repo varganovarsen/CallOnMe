@@ -25,6 +25,8 @@ public class DealController : MonoBehaviour
     public event Action<Deal> OnOfferDeal;
     public event Action<Deal> OnAcceptDeal;
 
+    public event Action OnAllowReturn;
+
     Deal _completedDeal;
     public event Action<Deal> OnReturnFromDeal;
 
@@ -117,6 +119,11 @@ public class DealController : MonoBehaviour
         ManaBank.AddMana(_completedDeal.manaCount);
         //LevelLoader.Instance.UnloadUpworldScene(_completedDeal.sceneReference.SceneName);
 
+    }
+
+    public void AllowReturn()
+    {
+        OnAllowReturn.Invoke();
     }
 
     public void ReturnFromDeal()

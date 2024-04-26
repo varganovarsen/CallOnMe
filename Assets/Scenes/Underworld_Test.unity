@@ -3244,7 +3244,6 @@ GameObject:
   - component: {fileID: 5712899786839926565}
   - component: {fileID: 1035196948}
   - component: {fileID: 1035196949}
-  - component: {fileID: 5712899786839926566}
   m_Layer: 6
   m_Name: Bed_bad
   m_TagString: Untagged
@@ -3597,24 +3596,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5712899786839926566
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5140901451208196046}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d800df8319dd714ab4a1205b1908ae4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  condition:
-    conditionEnum: 4
-    deal: {fileID: 0}
-    task: {fileID: 11400000, guid: 06c24d3af9b042a488011eed417e9d82, type: 2}
-    invokeTime: 0
-  storyPoint: {fileID: 11400000, guid: 68b04f8c9ef45fa429003e5af6ed64f3, type: 2}
 --- !u!212 &5739668885068960228
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4018,6 +3999,7 @@ MonoBehaviour:
     deal: {fileID: 0}
     task: {fileID: 11400000, guid: 06c24d3af9b042a488011eed417e9d82, type: 2}
     invokeTime: 0
+    dialogue: {fileID: 0}
   storyPoint: {fileID: 11400000, guid: 68b04f8c9ef45fa429003e5af6ed64f3, type: 2}
 --- !u!1 &9054466576891055916
 GameObject:

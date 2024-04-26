@@ -7,4 +7,27 @@ using UnityEngine;
 public class PhraseList : ScriptableObject
 {
     public List<Phrase> list;
+    public DialogueCallbackType dialogueCallback;
+    public Action Callback;
+
+    private void OnValidate()
+    {
+        if (dialogueCallback == DialogueCallbackType.none)
+        {
+            Callback = null;
+        }
+        else
+        {
+            Callback = () =>
+            {
+                DealController.instance.AllowReturn();
+            };
+        }
+    }
+}
+
+public enum DialogueCallbackType
+{
+    none,
+    AllowReturn
 }

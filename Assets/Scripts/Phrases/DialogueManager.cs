@@ -94,6 +94,9 @@ public class DialogueManager : MonoBehaviour
         PhraseList _ = _dialoguesWaitlist.Dequeue();
         OnDialogueComplete?.Invoke(_);
 
+        if (phraseList.dialogueCallback != DialogueCallbackType.none)
+            phraseList.Callback.Invoke();
+
         if (_dialoguesWaitlist.Count > 0)
             StartCoroutine(nameof(Dialogue), _dialoguesWaitlist.Peek());
         else

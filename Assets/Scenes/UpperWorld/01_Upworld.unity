@@ -496,6 +496,7 @@ MonoBehaviour:
     deal: {fileID: 0}
     task: {fileID: 11400000, guid: 9d8358405ba1906499c80007c1b97edb, type: 2}
     invokeTime: 0
+    dialogue: {fileID: 0}
   storyPoint: {fileID: 11400000, guid: 35eace0109e57e245845e9541ddae694, type: 2}
 --- !u!1001 &1177232849
 PrefabInstance:
@@ -641,8 +642,37 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7784502941652697391, guid: 731717cfaaf80d1498724fa4e5801585,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1194507168}
   m_SourcePrefab: {fileID: 100100000, guid: 731717cfaaf80d1498724fa4e5801585, type: 3}
+--- !u!1 &1194507167 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7784502941652697391, guid: 731717cfaaf80d1498724fa4e5801585,
+    type: 3}
+  m_PrefabInstance: {fileID: 1194507166}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1194507168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1194507167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d800df8319dd714ab4a1205b1908ae4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  condition:
+    conditionEnum: 7
+    deal: {fileID: 0}
+    task: {fileID: 0}
+    invokeTime: 0
+    dialogue: {fileID: 11400000, guid: 1f3b274dcefd9fa4584c6c08566dd938, type: 2}
+  storyPoint: {fileID: 0}
 --- !u!1 &1325134133
 GameObject:
   m_ObjectHideFlags: 0

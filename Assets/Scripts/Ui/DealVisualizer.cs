@@ -22,17 +22,27 @@ public class DealVisualizer : MonoBehaviour
     private void OnEnable()
     {
         DealController.instance.OnOfferDeal += ShowAcceptDealButton;
+        DealController.instance.OnAllowReturn += ShowReturnButton;
 
         _acceptDealButtonAnimator = new ButtonAnimator(acceptDealButton, -20f, 80f);
         acceptDealButton.onClick.AddListener(DealController.instance.AcceptDeal);
         acceptDealButton.onClick.AddListener(_acceptDealButtonAnimator.ClickButton);
 
-        _returnButtonAnimator = new ButtonAnimator(returnButton, 20f, -80f);
+        _returnButtonAnimator = new ButtonAnimator(returnButton, -480f, -590f);
         returnButton.onClick.AddListener(DealController.instance.ReturnFromDeal);
         returnButton.onClick.AddListener(_returnButtonAnimator.ClickButton);
 
 
         
+    }
+
+    private void OnDisable()
+    {
+        DealController.instance.OnOfferDeal -= ShowAcceptDealButton;
+        acceptDealButton.onClick.RemoveAllListeners();
+
+        DealController.instance.OnAllowReturn -= ShowReturnButton;
+        returnButton.onClick.RemoveAllListeners();
     }
 
     private void Start()
@@ -47,7 +57,8 @@ public class DealVisualizer : MonoBehaviour
         _acceptDealButtonAnimator.ShowButton();
     }
 
-    void ShowReturnButton(Deal deal)
+    [ContextMenu("Show return button")]
+    void ShowReturnButton()
     {
         _currentDeal = null;
 
@@ -60,11 +71,7 @@ public class DealVisualizer : MonoBehaviour
     }
 
 
-    private void OnDisable()
-    {
-        DealController.instance.OnOfferDeal -= ShowAcceptDealButton;
-        acceptDealButton.onClick.AddListener(DealController.instance.AcceptDeal);
-    }
+   
 
 
 }
