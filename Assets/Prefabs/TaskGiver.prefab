@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6675413515255426718}
   - component: {fileID: 8849684649270153910}
   - component: {fileID: 9041127383347365100}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TaskGiver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,13 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f344052deeb54544db9b0b2e3ead1f1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  task:
-    tasksPointsPositionsList:
-    - {x: 5.23, y: 3.41, z: 0}
-    - {x: 5.4, y: -1.39, z: 0}
-    - {x: 2.08, y: 1.09, z: 0}
-    - {x: 1.54, y: 4.22, z: 0}
-    manaCost: 10
+  task: {fileID: 11400000, guid: 9d8358405ba1906499c80007c1b97edb, type: 2}
   _animationCurve:
     serializedVersion: 2
     m_Curve:
@@ -148,6 +142,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  changeObjectTo: {fileID: 0}
   buyForManaColor: {r: 0.23667802, g: 0.15686274, b: 0.77254903, a: 1}
   maxHoldTime: 0.8
 --- !u!61 &9041127383347365100
