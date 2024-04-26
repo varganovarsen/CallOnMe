@@ -1,9 +1,10 @@
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName ="New phrase", menuName = "Create new phrase")]
-public class Phrase : ScriptableObject
+[Serializable]
+public class Phrase
 {
     public string phraseText;
     public float holdTime = 1.75f;
