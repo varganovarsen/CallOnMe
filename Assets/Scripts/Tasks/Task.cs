@@ -27,17 +27,25 @@ namespace Assets.Scripts.Tasks
 
         public void Initialize()
         {
+            for (int i = 0; i < tasksPointsPositionsList.Count; i++)
+            {
+                tasksPointsPositionsList[i] = new Vector3(tasksPointsPositionsList[i].x, tasksPointsPositionsList[i].y, -1);
+            }
+
+
             _taskPointPositions = new Queue<Vector3>(tasksPointsPositionsList);
         }
+
 
         [ContextMenu("GenerateTaskPointsPosition")]
         void GenerateTaskPointsPosition()
         {
             for (int i = 0; i < tasksPointsPositionsList.Count; i++)
             {
-                tasksPointsPositionsList[i] = new Vector3(Random.Range(-7f, 7f), Random.Range(-3.5f, 3.5f));
+                tasksPointsPositionsList[i] = new Vector3(Random.Range(-7f, 7f), Random.Range(-3.5f, 3.5f), -1);
             } 
         }
+
         
     }
 }

@@ -10,6 +10,8 @@ public class TaskGiver : MonoBehaviour
 {
     [SerializeField]
     protected Task task;
+
+    public Task Task  => task;
     const string testTaskPath = "Tasks/testTask";
 
 
@@ -57,6 +59,8 @@ public class TaskGiver : MonoBehaviour
             else return 5f;
         }
     }
+
+    
 
     private void OnValidate()
     {
@@ -225,7 +229,10 @@ public class TaskGiver : MonoBehaviour
             //TODO: implement animation
             TaskController.instance.OnTaskStarted -= ToggleInteractivity;
 
+            _currentHoldTime = 0;
             Interactable = false;
+            UpdateComplitionVisuals();
+
             if (changeObjectTo)
             {
                 changeObjectTo.SetActive(true);

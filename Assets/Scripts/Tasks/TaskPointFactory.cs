@@ -16,7 +16,7 @@ namespace Assets.Scripts.Tasks
         {
             TaskPoint taskPoint = GameObject.Instantiate(taskPointPrefab, TaskPointPositions.Peek(), Quaternion.identity).GetComponent<TaskPoint>();
 
-            if (task.TasksPointsPositionsList.Count >0)
+            if (task.SpritesForTaskPoints.Length > 0 && task.TasksPointsPositionsList.Count >0)
                 taskPoint.SetSprite(task.SpritesForTaskPoints[Random.Range(0, task.SpritesForTaskPoints.Length)]);
             else
             {
