@@ -23,7 +23,8 @@ namespace StoryPoints
     {
         StartDialogue,
         EnableObject,
-        DisableObject
+        DisableObject,
+        StartPhonecall
     }
 
 }

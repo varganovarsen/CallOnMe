@@ -14,6 +14,7 @@ namespace StoryPoints
 
         public Deal deal;
         public Task task;
+        public float invokeTime;
 
     }
 
@@ -24,7 +25,8 @@ namespace StoryPoints
         EndDeal,
         StartTask,
         EndTask,
-        TimeRunOut
+        TimeRunOut,
+        SpecificTime
         
     }
 }

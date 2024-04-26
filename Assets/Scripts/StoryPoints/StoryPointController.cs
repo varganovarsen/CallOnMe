@@ -6,10 +6,24 @@ using UnityEngine;
 
 public class StoryPointController : MonoBehaviour
 {
-    [SerializeField]
-    StoryPoint storyPoint;
 
-    
+    private void OnEnable()
+    {
+        StoryPointInvoker.OnStoryPointReached += StartDialogue;
+    }
 
-    
+    private void OnDisable()
+    {
+        StoryPointInvoker.OnStoryPointReached -= StartDialogue;
+    }
+
+    private void StartDialogue(StoryPoint storyPoint)
+    {
+        if (storyPoint.phrases is not null)
+        {
+            DialogueManager.instance.StartDialogue(storyPoint.phrases);
+        }
+    }
+
+
 }

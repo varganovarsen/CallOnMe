@@ -23,6 +23,16 @@ public class StoryPointInvoker : MonoBehaviour
     {
         return condition;
     }
+    private void OnValidate()
+    {
+
+        if (condition.task is null)
+        {
+            TryGetComponent(out TaskGiver tg);
+            if(tg)
+                condition.task = tg.Task;
+        }
+    }
 
     public void SubscribeOnEvents(StoryPointCondition condition)
     {
@@ -43,9 +53,6 @@ public class StoryPointInvoker : MonoBehaviour
             case StoryPointConditionEnum.EndTask:
                 TaskController.instance.OnTaskEnded += InvokeStoryPoint;
                 break;
-            case StoryPointConditionEnum.TimeRunOut:
-                Timer.OnTimerRunOut += InvokeTimerStoryPoint;
-                break;
             default:
                 break;
         }
@@ -65,7 +72,7 @@ public class StoryPointInvoker : MonoBehaviour
             OnStoryPointReached?.Invoke(storyPoint);
     }
 
-    void InvokeTimerStoryPoint()
+    public static void InvokeTimerStoryPoint(StoryPoint storyPoint)
     {
         OnStoryPointReached?.Invoke(storyPoint);
     }
