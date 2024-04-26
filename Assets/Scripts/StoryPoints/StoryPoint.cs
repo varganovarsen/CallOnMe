@@ -24,7 +24,8 @@ namespace StoryPoints
         StartDialogue,
         EnableObject,
         DisableObject,
-        StartPhonecall
+        StartPhonecall,
+        EnableReturnButton
     }
 
 }

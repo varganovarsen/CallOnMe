@@ -18,3 +18,5 @@ MonoBehaviour:
     m_ScenePath: Assets/Scenes/UpperWorld/01_Upworld.unity
   manaCount: 10
   enemyCount: 1
+  phonecallPhraseList: {fileID: 11400000, guid: fb2139bfa4f36ed40aef527a04dba58f,
+    type: 2}

@@ -3,27 +3,41 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using utils;
 
 public class DealVisualizer : MonoBehaviour
 {
     [SerializeField]
     Button acceptDealButton;
+    [SerializeField]
+    Button returnButton;
 
     private Deal _currentDeal;
     public  Deal CurrentDeal => _currentDeal;
 
-    AcceptDealButtonAnimator _acceptDealButtonAnimator;
+    ButtonAnimator _acceptDealButtonAnimator;
+    ButtonAnimator _returnButtonAnimator;
+
 
     private void OnEnable()
     {
         DealController.instance.OnOfferDeal += ShowAcceptDealButton;
+
+        _acceptDealButtonAnimator = new ButtonAnimator(acceptDealButton, -20f, 80f);
         acceptDealButton.onClick.AddListener(DealController.instance.AcceptDeal);
-        acceptDealButton.onClick.AddListener(AcceptDeal);
+        acceptDealButton.onClick.AddListener(_acceptDealButtonAnimator.ClickButton);
+
+        _returnButtonAnimator = new ButtonAnimator(returnButton, 20f, -80f);
+        returnButton.onClick.AddListener(DealController.instance.ReturnFromDeal);
+        returnButton.onClick.AddListener(_returnButtonAnimator.ClickButton);
+
+
+        
     }
 
     private void Start()
     {
-        _acceptDealButtonAnimator = new AcceptDealButtonAnimator(acceptDealButton);
+        
     }
 
     void ShowAcceptDealButton(Deal deal)
@@ -33,9 +47,16 @@ public class DealVisualizer : MonoBehaviour
         _acceptDealButtonAnimator.ShowButton();
     }
 
+    void ShowReturnButton(Deal deal)
+    {
+        _currentDeal = null;
+
+        _returnButtonAnimator.ShowButton();
+    }
+
     void AcceptDeal()
     {
-        _acceptDealButtonAnimator.AcceptDeal();
+        _acceptDealButtonAnimator.ClickButton();
     }
 
 
@@ -48,32 +69,37 @@ public class DealVisualizer : MonoBehaviour
 
 }
 
-public class AcceptDealButtonAnimator
+public class ButtonAnimator
 {
     GameObject _animationObject;
-    Button _acceptDealButton;
+    Button _button;
+
+    public float _showedY;
+    public float _hiddenY;
 
     public void ShowButton()
     {
-        LeanTween.moveLocalY(_animationObject, -20f, 1f).setEaseOutElastic().setOnComplete(() => _acceptDealButton.interactable = true);
+        LeanTween.moveLocalY(_animationObject, _showedY, 1f).setEaseOutElastic().setOnComplete(() => _button.interactable = true);
     }
 
-    public void AcceptDeal()
+    public void ClickButton()
     {
-        _acceptDealButton.interactable = false;
-        LeanTween.scale(_animationObject, Vector2.one * 2f, 0.3f).setEasePunch();
-        LeanTween.moveLocalY(_animationObject, 40f, 1f).setEaseInBounce().setDelay(0.4f);
+        _button.interactable = false;
+        LeanTween.scale(_animationObject, Vector2.one * 2f, 0.3f).setEasePunch().setOnComplete(() => HideButton());
+        //LeanTween.moveLocalY(_animationObject, 40f, 1f).setEaseInBounce().setDelay(0.4f);
     }
 
     public void HideButton()
     {
-        LeanTween.moveLocalY(_animationObject, 80f, 3f).setEaseOutQuart().setOnComplete(() => _acceptDealButton.interactable = false);
+        LeanTween.moveLocalY(_animationObject, _hiddenY, 3f).setEaseOutQuart().setOnComplete(() => _button.interactable = false);
     }
 
-    public AcceptDealButtonAnimator(Button acceptDealButton)
+    public ButtonAnimator(Button button, float showedY ,float hiddenY)
     {
-        _animationObject = acceptDealButton.gameObject;
-        _acceptDealButton = acceptDealButton;
+        _animationObject = button.gameObject;
+        _button = button;
+        _showedY = showedY;
+        _hiddenY = hiddenY;
     }
 }
 

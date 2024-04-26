@@ -17,18 +17,18 @@ public class DialogueManager : MonoBehaviour
 
     public event Action<PhraseList> OnDialogueComplete;
 
-    
 
-    ///TODO: Add waitlist
+
 
     private void Awake()
     {
         if (instance == null)
         {
             instance = this;
-        } else
+        }
+        else
         {
-           // Destroy(gameObject);
+            // Destroy(gameObject);
         }
 
         _dialoguesWaitlist = new Queue<PhraseList>();
@@ -51,7 +51,7 @@ public class DialogueManager : MonoBehaviour
 
     //    _dialoguesWaitlist.Enqueue(storyPoint.phrases);
     //   //storyPoint.phrases.list.CopyTo(_currentPhraseList.list.ToArray(), storyPoint.phrases.list.Count - 1);
-        
+
     //    if (!_isInDialogue )
     //    {
     //        StartCoroutine(nameof(Dialogue), _dialoguesWaitlist.Peek());
@@ -76,7 +76,7 @@ public class DialogueManager : MonoBehaviour
 
     IEnumerator Dialogue(PhraseList phraseList)
     {
-       
+
         if (!_isDrawingPhrase)
         {
             foreach (Phrase phrase in phraseList.list)
@@ -88,15 +88,16 @@ public class DialogueManager : MonoBehaviour
                 phrasePanel.OnPhraseComplete -= () => _isDrawingPhrase = false;
                 yield return new WaitForSeconds(0.5f);
             }
-            
+
         }
 
-        OnDialogueComplete.Invoke(_dialoguesWaitlist.Dequeue());
+        PhraseList _ = _dialoguesWaitlist.Dequeue();
+        OnDialogueComplete?.Invoke(_);
 
         if (_dialoguesWaitlist.Count > 0)
             StartCoroutine(nameof(Dialogue), _dialoguesWaitlist.Peek());
         else
-           _isInDialogue = false;
+            _isInDialogue = false;
     }
 
 }

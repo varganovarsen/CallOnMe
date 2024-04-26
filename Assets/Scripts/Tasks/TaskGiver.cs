@@ -226,7 +226,6 @@ public class TaskGiver : MonoBehaviour
     {
         if (endedTask == task)
         {
-            //TODO: implement animation
             TaskController.instance.OnTaskStarted -= ToggleInteractivity;
 
             _currentHoldTime = 0;

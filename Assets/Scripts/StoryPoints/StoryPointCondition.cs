@@ -12,9 +12,11 @@ namespace StoryPoints
     {
         public StoryPointConditionEnum conditionEnum;
 
+        
         public Deal deal;
         public Task task;
         public float invokeTime;
+        public PhraseList dialogue;
 
     }
 
@@ -26,7 +28,8 @@ namespace StoryPoints
         StartTask,
         EndTask,
         TimeRunOut,
-        SpecificTime
-        
+        SpecificTime,
+        DialogueComplete
+
     }
 }

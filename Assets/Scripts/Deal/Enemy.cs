@@ -12,7 +12,6 @@ namespace Assets.Scripts.Deals
         {
             if (endedTask == task)
             {
-                //TODO: implement animation
                 _gfx.enabled = false;
                 TaskController.instance.OnTaskStarted -= ToggleInteractivity;
                 DealController.instance.EnemyCount--;

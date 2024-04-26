@@ -45,7 +45,7 @@ public class StoryPointInvoker : MonoBehaviour
                 DealController.instance.OnOfferDeal += InvokeStoryPoint;
                 break;
             case StoryPointConditionEnum.EndDeal:
-                DealController.instance.OnCompleteDeal += InvokeWithCameraBlendTimeDelay;
+                DealController.instance.OnReturnFromDeal += InvokeWithCameraBlendTimeDelay;
                 break;
             case StoryPointConditionEnum.StartTask:
                 TaskController.instance.OnTaskStarted += InvokeStoryPoint;

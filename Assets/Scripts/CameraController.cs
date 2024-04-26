@@ -14,6 +14,8 @@ public class CameraController : MonoBehaviour
     [SerializeField]
     CinemachineVirtualCamera _underworld;
 
+    public static bool InUnderworld = true;
+
     public static float BlendTime;
     static List<float> TransitionDelays = new List<float>();
 
@@ -30,15 +32,16 @@ public class CameraController : MonoBehaviour
         get
         {
             if (TransitionDelays.Count > 0)
-            return TransitionDelays.Max();
+                return TransitionDelays.Max();
             else
-            return 0;
+                return 0;
         }
     }
     private void OnEnable()
     {
         LevelLoader.Instance.OnUpworldLoaded += ToggleCameras;
-        DealController.instance.OnCompleteDeal += ToggleCameras;
+        DealController.instance.OnReturnFromDeal += ToggleCameras;
+        CameraTransitionEnded += ToggleInUnderworld;
 
         BlendTime = GetComponent<CinemachineBrain>().m_DefaultBlend.m_Time;
 
@@ -47,6 +50,13 @@ public class CameraController : MonoBehaviour
         {
             transform.GetChild(0).parent = null;
         }
+    }
+
+    private void OnDisable()
+    {
+        LevelLoader.Instance.OnUpworldLoaded -= ToggleCameras;
+        DealController.instance.OnReturnFromDeal -= ToggleCameras;
+        CameraTransitionEnded -= ToggleInUnderworld;
     }
 
     public void ToggleCameras()
@@ -73,13 +83,11 @@ public class CameraController : MonoBehaviour
             _upworld.Priority = 0;
         }
 
-        Utils.Invoke(this, () => CameraTransitionEnded?.Invoke(), TransitionDelay);
+        Utils.Invoke(this, () => CameraTransitionEnded?.Invoke(), TransitionDelay + BlendTime);
     }
 
-    private void OnDisable()
-    {
-        LevelLoader.Instance.OnUpworldLoaded -= ToggleCameras;
-        DealController.instance.OnCompleteDeal -= ToggleCameras;
-    }
+    private void ToggleInUnderworld() => InUnderworld = !InUnderworld;
+
+    
 
 }

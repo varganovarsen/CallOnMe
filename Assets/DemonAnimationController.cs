@@ -37,13 +37,13 @@ public class DemonAnimationController : MonoBehaviour
     private void Start()
     {
         DealController.instance.OnAcceptDeal += Teleport;
-        DealController.instance.OnCompleteDeal += Teleport;
+        DealController.instance.OnReturnFromDeal += Teleport;
     }
 
     private void OnDisable()
     {
         DealController.instance.OnAcceptDeal -= Teleport;
-        DealController.instance.OnCompleteDeal -= Teleport;
+        DealController.instance.OnReturnFromDeal -= Teleport;
     }
 
     public void Teleport(Deal deal)
