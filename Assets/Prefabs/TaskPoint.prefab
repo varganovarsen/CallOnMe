@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20c9e0193a1ab3a4f827a0a3aa26e319, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHoldTime: 0.7
+  maxHoldTime: 1.05
   _curve:
     serializedVersion: 2
     m_Curve:
@@ -199,6 +199,7 @@ MonoBehaviour:
   buttonToDestroySprites:
   - {fileID: 21300000, guid: dbd01104a91c1294fb348f7a693c5a9e, type: 3}
   - {fileID: 21300000, guid: a67d7278ebc224b4d8e2fa46d076d8aa, type: 3}
+  - {fileID: 21300000, guid: f78ab673e9b7f514fbbd5c016518a6af, type: 3}
 --- !u!58 &2641105431891816453
 CircleCollider2D:
   m_ObjectHideFlags: 0

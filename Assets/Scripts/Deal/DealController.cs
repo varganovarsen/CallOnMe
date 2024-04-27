@@ -117,7 +117,6 @@ public class DealController : MonoBehaviour
         //TODO: return to underworld with button click
 
         ManaBank.AddMana(_completedDeal.manaCount);
-        //LevelLoader.Instance.UnloadUpworldScene(_completedDeal.sceneReference.SceneName);
 
     }
 
@@ -129,6 +128,7 @@ public class DealController : MonoBehaviour
     public void ReturnFromDeal()
     {
         OnReturnFromDeal.Invoke(_completedDeal);
+        LevelLoader.Instance.UnloadUpworldScene(_completedDeal.sceneReference.SceneName);
         _completedDeal = null;
     }
 
